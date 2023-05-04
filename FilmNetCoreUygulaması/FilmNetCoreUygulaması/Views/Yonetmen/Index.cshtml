@@ -1,0 +1,53 @@
+﻿@model IEnumerable<FilmNetCoreUygulaması.Models.Yönetmen>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.YönetmenAdi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.YönetmenSoyadi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Yas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FilmSayisi)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.YönetmenAdi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.YönetmenSoyadi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Yas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FilmSayisi)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.YönetmenNo">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.YönetmenNo">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.YönetmenNo">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

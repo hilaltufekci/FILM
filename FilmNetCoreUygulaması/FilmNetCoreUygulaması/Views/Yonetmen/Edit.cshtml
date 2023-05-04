@@ -1,0 +1,49 @@
+﻿@model FilmNetCoreUygulaması.Models.Yönetmen
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Yönetmen</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="YönetmenNo" />
+            <div class="form-group">
+                <label asp-for="YönetmenAdi" class="control-label"></label>
+                <input asp-for="YönetmenAdi" class="form-control" />
+                <span asp-validation-for="YönetmenAdi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="YönetmenSoyadi" class="control-label"></label>
+                <input asp-for="YönetmenSoyadi" class="form-control" />
+                <span asp-validation-for="YönetmenSoyadi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Yas" class="control-label"></label>
+                <input asp-for="Yas" class="form-control" />
+                <span asp-validation-for="Yas" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FilmSayisi" class="control-label"></label>
+                <input asp-for="FilmSayisi" class="form-control" />
+                <span asp-validation-for="FilmSayisi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
